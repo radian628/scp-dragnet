@@ -1,0 +1,4 @@
+[!--devops:http://localhost:6969/static/manifest.json--]
+Wikidot Devops Server Example
+
+please update ty
