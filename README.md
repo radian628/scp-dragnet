@@ -1,6 +1,6 @@
 # Installation
 
-## Depedencies
+## Dependencies
 
 - Git
 - [Bun](https://bun.sh/)
