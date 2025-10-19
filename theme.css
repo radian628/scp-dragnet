@@ -5,3 +5,9 @@
 /*|_| |_|\__,_|\__, |\__,_|\___|_| |_|*/
 /*             |___/                  */
 /* page theme for DRAGNET by Hayden and Radian628 */
+
+/* normalizer */
+@import url("https://cdn.scpwiki.com/theme/en/basalt/normalize-min.css");
+
+/* body and header font */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
