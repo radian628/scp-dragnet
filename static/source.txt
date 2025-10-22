@@ -1,4 +1,5 @@
 [!--devops:http://localhost:6969/static/manifest.json--]
-Wikidot Devops Server Example
-
-please update ty
+[[module css]]
+@import url("https://scp-sandbox-3.wikidot.com/local--files/dragnet/theme.css");
+[[/module]]
+body e
