@@ -301,5 +301,11 @@ body {
   cursor: pointer;
 }
 
+@media (max-width: 767px) {
+  #top-bar .mobile-top-bar {
+    width: 0px;
+  }
+}
+
 
 
