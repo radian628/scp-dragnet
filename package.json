@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "@types/node": "^24.8.1"
+    "@types/node": "^24.8.1",
+    "chokidar": "^4.0.3",
+    "sass": "^1.93.2"
   }
 }

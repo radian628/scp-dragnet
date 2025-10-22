@@ -1,0 +1,10 @@
+[!--devops:http://localhost:6969/static/manifest.json--]
+
+[[module css]]
+{{js:sass("theme.css")}}
+[[/module]]
+
+Wikidot Devops Server Example
+
+
+please update ty
