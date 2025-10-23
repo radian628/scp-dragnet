@@ -4,7 +4,4 @@
 {{js:sass("theme.css")}}
 [[/module]]
 
-Wikidot Devops Server Example
-
-
-please update ty
+wow wow

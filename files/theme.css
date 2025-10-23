@@ -41,6 +41,7 @@
   /* other stuff */
   --glow: -2px -2px 4px var(--highlight-warm), 2px 2px 4px var(--highlight-cool);
   --glow-icon: drop-shadow(-2px -2px 4px var(--highlight-warm)) drop-shadow(2px 2px 4px var(--highlight-cool));
+  --gradient: linear-gradient(-45deg, var(--highlight-warm), var(--highlight-cool))
 }
 
 #login-status .printuser {
@@ -87,6 +88,7 @@
   height: 100%;
 }
 
+/*
 #top-bar .open-menu a {
   display: block;
   width: 100%;
@@ -97,6 +99,7 @@
   mask-repeat: no-repeat;
   background-color: var(--text);
 }
+*/
 
 #side-bar {
   background-color: yellowgreen;
@@ -163,6 +166,7 @@ body::before {
   width: 80%;
   flex-wrap: wrap;
   align-content: center;
+  /*! position: absolute; */
 }
 
 #top-bar :is(.top-bar, .mobile-top-bar) > ul {
@@ -173,6 +177,10 @@ body::before {
   align-content: center;
   justify-content: space-around;
   transition: 0.15s ease-in;
+}
+
+#top-bar :is(.top-bar, .mobile-top-bar) > ul > li {
+  font-size: 1.3rem;
 }
 
 #top-bar :is(.top-bar, .mobile-top-bar) > ul > li a:hover {
@@ -301,11 +309,27 @@ body {
   cursor: pointer;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 767px) {
   #top-bar .mobile-top-bar {
-    width: 0px;
+    width: 0;
   }
 }
+
+#page-content {
+  display: grid;
+  min-height: 100vw;
+  grid-template-areas: ". content .";
+  grid-template-columns: 1fr minmax(0, 8fr) 1fr;
+
+  & > * {
+    grid-column: content;
+  }
+}
+
+
+
+
+
 
 
 
