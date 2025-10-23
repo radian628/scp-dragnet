@@ -101,16 +101,6 @@
 }
 */
 
-#side-bar {
-  background-color: yellowgreen;
-  width: 20em;
-  display: block;
-}
-
-#footer {
-  background-color: pink;
-}
-
 #top-bar {
    background: none;
 }
@@ -309,6 +299,13 @@ body {
   cursor: pointer;
 }
 
+ div.theme a.collapsible-block-link:is(:hover, :active) {
+  background-color: var(--contrast);
+  background-image:linear-gradient(135deg, var(--highlight-warm), var(--highlight-cool) 70%);
+  transition: 0.05s ease-in 0.05s;
+  cursor: pointer; 
+ }
+
 @media (min-width: 767px) {
   #top-bar .mobile-top-bar {
     width: 0;
@@ -352,6 +349,38 @@ body {
 
 :is(#page-options-bottom, #page-options-bottom-2) a {
     font-size: 1rem;
+}
+
+div.theme {
+  position: fixed;
+  top: 2px;
+  right: 7rem;
+  z-index: 6;
+  height: 3rem;
+  width: 3rem;
+}
+
+.collapsible-block, .collapsible-block-folded, .collapsible-block-unfolded, .collapsible-block-unfolded-link {
+  height: 100%;
+  width: 100%;
+  align-content: center;
+}
+
+div.theme a.collapsible-block-link {
+  margin: auto;
+  display: block;
+  font-size: 0;
+  height: 60%;
+  width: 60%;
+  mask-image: var(--sun-icon);
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  background-color: var(--text);
+}
+
+div.theme .collapsible-block-unfolded a.collapsible-block-link {
+  mask-image: var(--moon-icon);
 }
 
 

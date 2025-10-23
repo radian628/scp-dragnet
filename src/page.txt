@@ -4,4 +4,9 @@
 {{js:sass("theme.css")}}
 [[/module]]
 
-wow wow
+
+[!-- DONT TOUCH OR I WILL KILL YOU!!!!!!!!!!!!!!!!!!!!!!! --]
+[[div_ class="theme"]]
+[[collapsible show="light mode" hide="dark mode"]]
+[[/collapsible]]
+[[/div]]
