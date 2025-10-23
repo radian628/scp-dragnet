@@ -88,7 +88,7 @@
   height: 100%;
 }
 
-/*
+
 #top-bar .open-menu a {
   display: block;
   width: 100%;
@@ -99,7 +99,6 @@
   mask-repeat: no-repeat;
   background-color: var(--text);
 }
-*/
 
 #side-bar {
   background-color: yellowgreen;
@@ -149,6 +148,7 @@ body::before {
   grid-template-columns: 3rem max-content auto 3rem 3rem 1rem;
   grid-template-rows: 3rem;
   width: 100%;
+  max-width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -325,6 +325,8 @@ body {
     grid-column: content;
   }
 }
+
+
 
 
 

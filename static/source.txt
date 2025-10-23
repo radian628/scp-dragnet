@@ -72,7 +72,7 @@
 
 #top-bar .open-menu {
   position: fixed;
-  top: 2px;
+  top: 0;
   left: 0;
   height: 3rem;
   width: 3rem;
@@ -84,20 +84,20 @@
   height: 100%;
 }
 
-/*
 #top-bar .open-menu a {
   display: block;
   width: 100%;
   height: 100%;
   mask-image: var(--menu-icon);
-  mask-size: 80%;
+  mask-size: 60%;
   mask-position: center;
   mask-repeat: no-repeat;
   background-color: var(--text);
 }
-*/
+
 #top-bar {
   background: none;
+  right: unset;
 }
 
 body {
@@ -105,6 +105,8 @@ body {
   color: var(--text);
   font-family: var(--font-body);
   position: relative;
+  scrollbar-color: var(--text) var(--bg-dark);
+  scrollbar-width: thin;
 }
 
 body::before {
@@ -129,10 +131,11 @@ body::before {
 
 #header {
   display: grid;
-  grid-template-areas: "menu logo topbar search login .";
-  grid-template-columns: 3rem max-content auto 3rem 3rem 1rem;
+  grid-template-areas: "menu logo topbar toggle search login .";
+  grid-template-columns: 3rem max-content auto 3rem 3rem 3rem 1rem;
   grid-template-rows: 3rem;
   width: 100%;
+  max-width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -141,16 +144,19 @@ body::before {
 #top-bar {
   grid-area: topbar;
   display: flex;
-  justify-content: center;
+  justify-content: end;
+  padding-right: 1rem;
+  position: relative;
 }
 
 #top-bar :is(.top-bar, .mobile-top-bar) {
   display: flex;
   height: 100%;
-  width: 80%;
+  width: 100%;
   flex-wrap: wrap;
   align-content: center;
   /*! position: absolute; */
+  max-width: min(60vw, 50rem);
 }
 
 #top-bar :is(.top-bar, .mobile-top-bar) > ul {
@@ -159,17 +165,53 @@ body::before {
   height: 100%;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: space-around;
+  justify-content: space-between;
   transition: 0.15s ease-in;
+}
+
+#top-bar ul li:is(:hover, :focus-within) > ul {
+  visibility: visible;
 }
 
 #top-bar :is(.top-bar, .mobile-top-bar) > ul > li {
   font-size: 1.3rem;
 }
 
-#top-bar :is(.top-bar, .mobile-top-bar) > ul > li a:hover {
-  text-shadow: var(--glow);
-  color: var(--contrast);
+#top-bar :is(.top-bar, .mobile-top-bar) > ul > li a:is(:hover, :active, :focus) {
+  background-image: linear-gradient(135deg, var(--highlight-warm), var(--highlight-cool));
+  background-clip: text;
+  color: transparent;
+}
+
+#top-bar:has(:is(li a:not(:last-child), li > ul):is(:hover, :active, :focus)) {
+  background-color: var(--bg-dark);
+}
+
+#top-bar ul li ul {
+  background-color: var(--bg-dark);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: flex;
+}
+
+#top-bar ul li ul li {
+  flex-grow: 1;
+}
+
+#top-bar ul li ul {
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0 1rem;
+  min-height: 2rem;
+  align-content: center;
+  border-bottom: solid 2px var(--bg-light);
+}
+
+#top-bar li ul li a {
+  width: unset;
+  text-align: unset;
+  background-color: unset;
 }
 
 #header h1 {
@@ -183,6 +225,7 @@ body::before {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
+  padding-right: 1rem;
 }
 
 #header h1 a::after {
@@ -320,8 +363,8 @@ div.theme a.collapsible-block-link:is(:hover, :active) {
   text-align: center;
   font-family: var(--font-header);
   text-transform: uppercase;
-  font-size: 8rem;
-  letter-spacing: 3rem;
+  font-size: 10vw;
+  letter-spacing: 3vw;
   font-weight: 100;
   background-image: var(--radial-gradient);
   background-clip: text;
@@ -369,6 +412,81 @@ div.theme a.collapsible-block-link {
 
 div.theme .collapsible-block-unfolded a.collapsible-block-link {
   mask-image: var(--moon-icon);
+}
+
+:root:has(.theme .collapsible-block-folded[style="display: none;"]) {
+  --bg-light: #dcdcdc;
+  --bg-dark: #fafafa;
+  --text: #696969;
+  --contrast: #112233;
+}
+
+#search-top-box-input {
+  display: none;
+}
+
+@media (max-width: 787px) {
+  #header h1 {
+    display: none;
+  }
+  #top-bar .mobile-top-bar > ul {
+    display: flex !important;
+  }
+  #top-bar :is(.top-bar, .mobile-top-bar) > ul > li {
+    font-size: 1rem;
+  }
+  #top-bar .mobile-top-bar {
+    width: 100%;
+  }
+  #top-bar .top-bar {
+    display: none;
+  }
+  #top-bar {
+    padding-right: 0;
+  }
+}
+.owindow {
+  position: fixed;
+  background-color: var(--bg-dark);
+  border: solid 4px;
+  border-image: linear-gradient(to right, var(--highlight-warm), var(--highlight-cool));
+  border-image-slice: 1;
+}
+
+.owindow .title {
+  background-color: var(--bg-light);
+  font-family: var(--font-header);
+  background-image: linear-gradient(145deg, var(--highlight-warm), var(--highlight-cool));
+  color: var(--contrast);
+  font-size: 1.5rem;
+  font-weight: 250;
+  letter-spacing: 3px;
+}
+
+.owindow img {
+  background: none !important;
+}
+
+.owindow .button-bar a {
+  font-family: var(--font-header);
+  background-image: linear-gradient(135deg, var(--highlight-warm), var(--highlight-cool));
+  border: none;
+  color: var(--contrast);
+  border-radius: 1rem;
+  position: relative;
+}
+
+.owindow .button-bar a::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-image: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: inherit;
+  filter: blur(12px);
 }
 [[/module]]
 
