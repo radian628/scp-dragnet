@@ -528,7 +528,7 @@ div.theme .collapsible-block-unfolded a.collapsible-block-link {
   animation: 1.5s ease-in-out 0s 1 normal running fade-in;
 }
 
-#top-bar :is(.mobile-top-bar, .top-bar) > ul > li, div.theme a.collapsible-block-link, #header .printuser a, #search-top-box-form input[type="submit"]  {
+#top-bar :is(.mobile-top-bar, .top-bar) > ul > li, div.theme .collapsible-block, #header .printuser a, #search-top-box-form input[type="submit"]  {
   animation: 0.3s ease-in var(--delay) 1 normal running fade-in;
   animation-fill-mode: backwards;
 }
@@ -549,7 +549,7 @@ div.theme .collapsible-block-unfolded a.collapsible-block-link {
   --delay: 2s;
 }
 
-div.theme a.collapsible-block-link {
+div.theme .collapsible-block {
   --delay: 2.2s;
 }
 
