@@ -16,8 +16,8 @@
 /* svgs */
 @import url("https://scp-sandbox-3.wikidot.com/local--files/dragnet/topography.css");
 :root {
-  --font-header: "Urbanist";
-  --font-body: "Ubuntu";
+  --font-header: "Urbanist", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  --font-body: "Ubuntu", Helvetica, sans-serif;
   /* pallete dark */
   /*background*/
   --slate-950: #020617;
@@ -156,7 +156,7 @@ body::before {
   flex-wrap: wrap;
   align-content: center;
   /*! position: absolute; */
-  max-width: min(60vw, 50rem);
+  max-width: min(50vw, 40rem);
 }
 
 #top-bar :is(.top-bar, .mobile-top-bar) > ul {
@@ -167,6 +167,7 @@ body::before {
   align-content: center;
   justify-content: space-between;
   transition: 0.15s ease-in;
+  position: relative;
 }
 
 #top-bar ul li:is(:hover, :focus-within) > ul {
@@ -183,7 +184,7 @@ body::before {
   color: transparent;
 }
 
-#top-bar:has(:is(li a:not(:last-child), li > ul):is(:hover, :active, :focus)) {
+#top-bar ul:has(:is(li a:not(:last-child), li > ul):is(:hover, :active, :focus)) {
   background-color: var(--bg-dark);
 }
 
@@ -212,6 +213,10 @@ body::before {
   width: unset;
   text-align: unset;
   background-color: unset;
+}
+
+#top-bar .top-bar > ul {
+  justify-content: space-around;
 }
 
 #header h1 {
@@ -495,6 +500,116 @@ div.theme .collapsible-block-unfolded a.collapsible-block-link {
   border-radius: inherit;
   filter: blur(12px);
 }
+
+#header {
+  animation: 1.5s ease-in-out 0s 1 normal running unfurl;
+}
+
+#extrac-div-1 {
+  animation: 1.5s ease-in-out 0s 1 normal running fade-in;
+}
+
+#top-bar :is(.mobile-top-bar, .top-bar) > ul > li, div.theme a.collapsible-block-link, #header .printuser a, #search-top-box-form input[type=submit] {
+  animation: 0.3s ease-in var(--delay) 1 normal running fade-in;
+  animation-fill-mode: backwards;
+}
+
+#top-bar :is(.mobile-top-bar, .top-bar) > ul > li:nth-child(1) {
+  --delay: 1.4s;
+}
+
+#top-bar :is(.mobile-top-bar, .top-bar) > ul > li:nth-child(2) {
+  --delay: 1.6s;
+}
+
+#top-bar :is(.mobile-top-bar, .top-bar) > ul > li:nth-child(3) {
+  --delay: 1.8s;
+}
+
+#top-bar :is(.mobile-top-bar, .top-bar) > ul > li:nth-child(4) {
+  --delay: 2s;
+}
+
+div.theme a.collapsible-block-link {
+  --delay: 2.2s;
+}
+
+#search-top-box-form input[type=submit] {
+  --delay: 2.4s;
+}
+
+#header .printuser a {
+  --delay: 2.6s;
+}
+
+#page-title {
+  animation: 1.3s ease-out 3s 1 normal running unfurl;
+  animation-fill-mode: backwards;
+}
+
+#page-title {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+#page-title::before {
+  content: "DRAGNET";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background-image: inherit;
+  background-clip: text;
+  filter: blur(10px);
+  animation: 1.6s ease-in-out 4.4s 1 normal running unfurl;
+  animation-fill-mode: backwards;
+}
+
+.pre-content {
+  animation: 2s ease-in-out 6.2s 1 normal running fade-in;
+  animation-fill-mode: backwards;
+}
+
+#page-content p {
+  margin-bottom: 1rem;
+}
+
+@keyframes unfurl {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+  }
+  to {
+    opacity: 1;
+    user-select: all;
+    pointer-events: all;
+  }
+}
+@keyframes glow {
+  from {
+    filter: 0;
+  }
+  to {
+    filter: blur(10px);
+  }
+}
+@keyframes text {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    clip-path: 0;
+  }
+}
 [[/module]]
 
 
@@ -502,4 +617,38 @@ div.theme .collapsible-block-unfolded a.collapsible-block-link {
 [[div_ class="theme"]]
 [[collapsible show="light mode" hide="dark mode"]]
 [[/collapsible]]
+[[/div]]
+
+[[div class="pre-content"]]
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce gravida convallis eros ut faucibus. Maecenas sit amet velit auctor, fermentum lacus non, tincidunt quam. Aenean cursus mi ligula, quis viverra turpis vulputate nec. Cras vel pharetra diam, ut scelerisque ante. Vestibulum id mauris ac metus fermentum viverra. In hac habitasse platea dictumst. Vivamus varius nunc nec metus varius vulputate. Aliquam tincidunt lobortis pretium.
+
+Nullam venenatis tellus diam. Nunc libero mauris, pretium eget turpis ac, feugiat aliquet ante. Pellentesque sed dignissim sem. Donec eget sodales justo. Quisque justo massa, egestas ac lobortis facilisis, fringilla in lectus. In hac habitasse platea dictumst. Duis iaculis neque vel viverra accumsan. Praesent nisi lectus, pellentesque sit amet scelerisque sed, accumsan sit amet felis. Sed et nisi vitae tortor ornare vulputate ut non risus.
+
+Nullam porttitor vehicula congue. Aenean in nisi sit amet erat imperdiet ultrices egestas sed tellus. Maecenas porttitor ultrices fringilla. Maecenas volutpat lectus arcu, vitae ultrices justo volutpat non. Integer ut suscipit nisi. Duis dolor sem, bibendum a accumsan at, finibus accumsan ligula. Mauris lobortis lacus in ligula vehicula, et posuere risus fringilla. Sed nulla nisi, pretium non orci a, placerat volutpat dui. Duis ac nibh ligula. Vestibulum eu malesuada leo, et vehicula dolor. Vivamus imperdiet imperdiet sodales. Nam gravida diam mattis ex rutrum pharetra. Etiam a condimentum erat.
+
+Suspendisse ut libero nec elit dignissim molestie. Sed vitae urna id dui porttitor rutrum ut in lacus. Maecenas tristique tincidunt viverra. Donec lacinia, libero quis pharetra congue, nulla sapien imperdiet erat, in dignissim quam libero at orci. Mauris porttitor in nisl at cursus. Nulla tempus ultricies quam nec pretium. Donec euismod pellentesque lacinia. Cras a commodo lorem. Vivamus dignissim, turpis et ultrices consequat, risus eros volutpat ex, in posuere leo nisl dictum velit. Nulla bibendum tempus sollicitudin. Cras at ex sit amet diam posuere ornare non eget risus. Cras nisi ipsum, malesuada quis libero ac, placerat scelerisque turpis. Morbi ullamcorper euismod erat, ac pretium odio sodales eget. Nam ac ante sagittis tellus aliquam facilisis. Mauris rhoncus ante sit amet nulla tempor tristique. Donec viverra pretium mi, quis facilisis magna condimentum eu.
+
+Cras scelerisque lorem purus. Vestibulum commodo, ex et fringilla porttitor, est mauris molestie nisi, ac gravida ante nulla ac urna. Aenean pharetra risus quis venenatis semper. Sed sollicitudin est vel metus facilisis, ac tincidunt neque molestie. Nunc sapien tortor, sodales at leo at, fringilla pellentesque lectus. Pellentesque posuere facilisis eros, ac sodales diam suscipit ac. In pretium condimentum sapien, in tempus nulla elementum at. Sed hendrerit dignissim magna, at pretium mauris consequat tincidunt.
+
+Nulla facilisi. Nam iaculis augue et urna scelerisque iaculis. Pellentesque sit amet ullamcorper tortor, sit amet ullamcorper tortor. In varius risus vel ultrices elementum. Etiam eu mi rhoncus, porta tortor a, eleifend lorem. Aliquam placerat nibh nec eros efficitur sollicitudin. Etiam maximus eros non ligula tincidunt, ac gravida orci semper. Fusce ultrices porttitor erat, eu commodo augue mollis non. Cras ullamcorper risus in aliquam fringilla. Suspendisse elit sapien, hendrerit eget imperdiet vel, sodales a metus.
+
+Nam sagittis pellentesque convallis. Donec lobortis, est at vestibulum finibus, justo quam elementum sem, quis fermentum libero nibh quis felis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis rhoncus mi sit amet faucibus finibus. Maecenas molestie mattis dolor. Maecenas sapien nibh, volutpat et laoreet ac, tempus quis risus. Donec pellentesque nunc a metus consectetur, vestibulum dapibus lacus rhoncus. Nunc vulputate sodales nulla at ullamcorper. Nullam sollicitudin risus et massa congue ultricies. Etiam consectetur nisl vitae ante dapibus, id faucibus diam elementum. Phasellus sagittis et metus in varius. Pellentesque at mi ut augue sodales ullamcorper. Sed sed nunc velit. Etiam posuere placerat commodo.
+
+Pellentesque aliquam dictum libero, in aliquam turpis placerat vel. In ipsum nisi, imperdiet lacinia dui ac, mattis dapibus risus. Nam sollicitudin nisi id justo molestie, et euismod felis euismod. Aliquam lobortis diam auctor ornare laoreet. Nulla ante turpis, pharetra a est id, varius fermentum nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus feugiat rhoncus lacus sit amet sodales. Aliquam cursus nulla diam, sit amet mattis nulla semper vitae. Nam at nisl accumsan, venenatis diam a, elementum purus. Curabitur id nisi id tortor egestas sagittis vitae id diam. Donec accumsan quis sem et gravida. Mauris magna nunc, dictum in ornare vel, placerat in neque. Cras id mi ut elit ullamcorper laoreet.
+
+Duis molestie, orci et sollicitudin tempus, risus ante bibendum lorem, at dignissim mauris purus at mauris. Curabitur at bibendum ipsum. Curabitur vel purus rhoncus, sollicitudin est at, viverra tellus. Quisque in vestibulum turpis, nec finibus orci. Nullam non sollicitudin magna. Mauris justo nibh, rhoncus eget sagittis tempus, vehicula eget lectus. Maecenas vestibulum hendrerit cursus.
+
+Nam in nulla a sapien convallis suscipit. Praesent nisl purus, feugiat pharetra consequat pretium, porta et massa. Cras egestas sodales velit, a volutpat nisl malesuada non. Praesent pharetra metus at volutpat eleifend. Morbi non eros ut nisl consequat vestibulum. In hac habitasse platea dictumst. Maecenas ac sem neque. Etiam convallis condimentum ipsum eget finibus. Nunc tincidunt mauris rhoncus leo convallis, in rhoncus odio tincidunt. Nullam orci ipsum, suscipit vitae quam ut, blandit consectetur sapien. In quis nulla finibus sem gravida efficitur efficitur vitae libero. Donec magna sapien, pharetra auctor ante quis, viverra mollis dolor. Maecenas vitae iaculis urna. Vestibulum eu est tempor, tristique purus eu, convallis eros.
+
+In sit amet neque ut tortor dapibus interdum. Praesent et lobortis diam, sit amet tempus ex. Vestibulum eget congue lorem, eu suscipit nisi. Donec libero odio, vestibulum in tortor placerat, lacinia viverra enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed cursus lacus eget nisl ultricies, a bibendum urna pretium. Quisque elementum at lorem vehicula eleifend. Aliquam ac malesuada tellus, non congue libero. Duis sed congue augue, sit amet cursus nisi. Morbi vitae ipsum maximus, maximus metus sed, lacinia magna. Mauris rutrum ligula et dictum varius.
+
+Etiam ornare diam a ex vestibulum, in mattis ipsum ornare. Donec non tincidunt felis. Phasellus lorem enim, scelerisque quis finibus eget, convallis in ipsum. Nulla eget ante nisl. Nulla sem mi, sagittis ac elit eget, pharetra ornare libero. Etiam commodo semper justo vitae facilisis. Suspendisse ut luctus dolor.
+
+Suspendisse et nibh ac felis tincidunt euismod. Pellentesque interdum felis ligula, ut ultrices enim convallis in. Etiam cursus libero vitae vestibulum laoreet. Praesent at enim quis justo hendrerit tristique vitae quis nisl. Mauris pellentesque viverra massa, vel pulvinar elit varius ac. Aliquam ut faucibus nisl. Nunc id ipsum dolor. Aenean nec bibendum lectus, eget placerat urna. Nunc at condimentum diam. Etiam lectus massa, mollis ut sodales at, cursus id tellus. Aenean rhoncus diam erat. Sed luctus accumsan eros, ut fringilla ligula convallis at.
+
+Mauris in fermentum tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent congue arcu lacus, ac posuere mauris ultricies quis. Etiam bibendum quam facilisis, molestie erat nec, fermentum metus. Phasellus sollicitudin leo eget nisi venenatis finibus. Suspendisse lacus enim, venenatis ut purus sit amet, efficitur fringilla nisi. Nunc venenatis sapien non tempor aliquam. Sed sed tempor quam. Duis fringilla sem sit amet ultricies tincidunt. Sed sodales lectus lorem, vitae commodo augue placerat et. Donec pretium accumsan lectus nec sollicitudin. Cras tincidunt ut erat feugiat auctor. Cras sem dui, maximus id efficitur vitae, pharetra sit amet mauris.
+
+Sed ultrices feugiat hendrerit. Maecenas eu magna in dolor consectetur egestas. Cras lorem turpis, elementum eu varius sit amet, vestibulum nec mi. Integer leo sem, dignissim at nibh non, pulvinar consequat sem. Duis malesuada eu leo a euismod. Suspendisse et mollis erat. Integer congue tincidunt ipsum, at auctor lectus fermentum vitae. Nunc egestas, dolor et mollis rhoncus, eros ante imperdiet sem, at ultricies quam quam non orci. Aliquam maximus ex eu lacus volutpat, non elementum augue vulputate. Quisque tristique condimentum ligula vitae gravida. In et interdum tortor, accumsan sodales mi. Sed ultrices vehicula magna, ut viverra massa mollis vel. Curabitur auctor fringilla hendrerit. Quisque rhoncus dolor mi, ac efficitur mi facilisis et. Aliquam egestas egestas dolor, vitae egestas ex luctus vitae. Fusce fringilla elit in dapibus euismod. 
 [[/div]]
