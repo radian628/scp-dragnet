@@ -235,6 +235,13 @@ body::before {
   font-weight: 200;
 }
 
+#header h1 a:hover::after {
+  background-image: linear-gradient(135deg, var(--highlight-warm), var(--highlight-cool));
+  background-clip: text;
+  color: transparent;
+  transition: 0.05s ease-in 0.05s;
+}
+
 /*
 #header h1 a::before {
   content: "";
