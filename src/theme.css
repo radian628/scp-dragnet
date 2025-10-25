@@ -10,8 +10,8 @@
 @import url("https://cdn.scpwiki.com/theme/en/basalt/normalize-min.css");
 
 /* body and header font */
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.bunny.net/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap');
+@import url('https://fonts.bunny.net/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* svgs */
 @import url("https://scp-sandbox-3.wikidot.com/local--files/dragnet/topography.css");
@@ -151,7 +151,7 @@ body::before {
 #top-bar {
   grid-area: topbar;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   padding-right: 1rem;
   position: relative;
 }
@@ -163,7 +163,6 @@ body::before {
   flex-wrap: wrap;
   align-content: center;
   /*! position: absolute; */
-  max-width: min(50vw, 40rem);
 }
 
 #top-bar :is(.top-bar, .mobile-top-bar) > ul {
@@ -226,6 +225,10 @@ body::before {
   justify-content: space-around;
 }
 
+#top-bar .top-bar {
+  max-width: min(45vw, 35rem);
+}
+
 
 #header h1 {
   grid-area: logo;
@@ -238,7 +241,7 @@ body::before {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-  padding-right: 1rem;
+  padding: 0 1rem;
 }
 
 #header h1 a::after {
@@ -305,7 +308,7 @@ body {
   justify-content: center;
 }
 
-#header .printuser a {
+#header .printuser a, #header .login-status-sign-in {
   height: 60%;
   width: 60%;
   mask-image: var(--user-icon);
@@ -313,6 +316,8 @@ body {
   mask-position: center;
   mask-repeat: no-repeat;
   background-color: var(--text);
+  display: block;
+  align-self: center;
 }
 
 #my-account, #account-topbutton {
@@ -326,6 +331,10 @@ body {
   grid-area: login;
   top: 0;
   right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
 }
 
 #search-top-box, #search-top-box-form {
@@ -349,7 +358,7 @@ body {
   margin: 0;
 }
 
-:is(#header .printuser a, #search-top-box-form input[type="submit"]):is(:hover, :active, :focus) {
+:is(#header .printuser a, #search-top-box-form input[type="submit"], #header .login-status-sign-in):is(:hover, :active, :focus) {
   background-color: var(--contrast);
   background-image:linear-gradient(135deg, var(--highlight-warm), var(--highlight-cool) 70%);
   transition: 0.05s ease-in 0.05s;
@@ -459,19 +468,29 @@ div.theme .collapsible-block-unfolded a.collapsible-block-link {
     }
     #top-bar .mobile-top-bar > ul {
         display: flex!important;
+        justify-content: space-around;
     }
     #top-bar :is(.top-bar, .mobile-top-bar) > ul > li {
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
     #top-bar .mobile-top-bar {
       width: 100%;
-
+      max-width: unset!important;
     }
     #top-bar .top-bar {
-        display: none;
+      display: none;
     }
     #top-bar {
       padding-right: 0;
+    }
+
+    #header {
+      grid-template-columns: 3rem 0px auto 2rem 2rem 2rem 0;
+    }
+
+    div.theme {
+      right: 4rem;
+      width: 2rem;
     }
 }
 
@@ -528,7 +547,7 @@ div.theme .collapsible-block-unfolded a.collapsible-block-link {
   animation: 1.5s ease-in-out 0s 1 normal running fade-in;
 }
 
-#top-bar :is(.mobile-top-bar, .top-bar) > ul > li, div.theme .collapsible-block, #header .printuser a, #search-top-box-form input[type="submit"]  {
+#top-bar :is(.mobile-top-bar, .top-bar) > ul > li, div.theme .collapsible-block, #header .printuser a, #search-top-box-form input[type="submit"], .page-rate-widget-box  {
   animation: 0.3s ease-in var(--delay) 1 normal running fade-in;
   animation-fill-mode: backwards;
 }
@@ -585,8 +604,13 @@ div.theme .collapsible-block {
   animation-fill-mode: backwards;
 }
 
+.page-rate-widget-box {
+  animation: 2s ease-in-out 6.2s normal running fade-in;
+  animation-fill-mode: backwards;
+}
+
 .pre-content {
-  animation: 2s ease-in-out 6.2s 1 normal running fade-in;
+  animation: 2s ease-in-out 8.2s 1 normal running fade-in;
   animation-fill-mode: backwards;
 }
 
@@ -632,6 +656,59 @@ div.theme .collapsible-block {
   to {
     clip-path: 0;
   }
+}
+
+.page-rate-widget-box {
+  background-image: linear-gradient(135deg, var(--highlight-warm), var(--highlight-cool));
+  color: var(--contrast);
+  padding: 0.2rem 1rem;
+  border-radius: 1rem;
+  position: relative;
+  margin-bottom: 1rem;
+  font-family: var(--font-header);
+}
+
+.page-rate-widget-box::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-image: inherit;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+  filter: blur(4px);
+}
+
+div.page-rate-widget-box .rate-points {
+  display: inline-block;
+}
+
+div.page-rate-widget-box .rate-points::first-letter {
+  text-transform: uppercase;
+}
+
+[style="text-align: center;"] {
+  margin-bottom: 3rem;
+}
+
+.page-rate-widget-box :is(.rateup, .ratedown) {
+  margin-left: 0.5rem;
+}
+
+.page-rate-widget-box .ratedown {
+  margin-right: 0.5rem;
+}
+
+.page-rate-widget-box :is(span, a) {
+  display: inline-block;
+}
+
+.page-rate-widget-box a:hover {
+  transform: scale(1.8);
+  text-shadow: 0 0 4px currentColor;
+  transition: 0.05s ease-in;
 }
 
 

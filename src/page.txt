@@ -11,8 +11,11 @@
 [[/collapsible]]
 [[/div]]
 
-[[div class="pre-content"]]
+[[=]]
+[[module rate]]
+[[/=]]
 
+[[div class="pre-content"]]
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce gravida convallis eros ut faucibus. Maecenas sit amet velit auctor, fermentum lacus non, tincidunt quam. Aenean cursus mi ligula, quis viverra turpis vulputate nec. Cras vel pharetra diam, ut scelerisque ante. Vestibulum id mauris ac metus fermentum viverra. In hac habitasse platea dictumst. Vivamus varius nunc nec metus varius vulputate. Aliquam tincidunt lobortis pretium.
 
