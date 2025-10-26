@@ -6,10 +6,23 @@
 
 
 [!-- DONT TOUCH OR I WILL KILL YOU!!!!!!!!!!!!!!!!!!!!!!! --]
-[[div_ class="theme"]]
-[[collapsible show="light mode" hide="dark mode"]]
-[[/collapsible]]
+
+[[div class="theme-tab"]]
+[[div_ class="focus"]]
+[# dropdown]
 [[/div]]
+[[div class="dropdown"]]
+[[tabview]]
+[[tab System]]
+[[/tab]]
+[[tab Darkmode]]
+[[/tab]]
+[[tab Lightmode]]
+[[/tab]]
+[[/tabview]]
+[[/div]]
+[[/div]]
+
 
 [[module rate]]
 
