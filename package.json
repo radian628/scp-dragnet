@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "@types/node": "^24.8.1",
+    "autoprefixer": "^10.4.21",
     "chokidar": "^4.0.3",
+    "postcss": "^8.5.6",
     "sass": "^1.93.2"
   }
 }

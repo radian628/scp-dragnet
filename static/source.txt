@@ -88,10 +88,14 @@
   display: block;
   width: 100%;
   height: 100%;
-  mask-image: var(--menu-icon);
-  mask-size: 60%;
-  mask-position: center;
-  mask-repeat: no-repeat;
+  -webkit-mask-image: var(--menu-icon);
+          mask-image: var(--menu-icon);
+  -webkit-mask-size: 60%;
+          mask-size: 60%;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
   background-color: var(--text);
 }
 
@@ -116,9 +120,12 @@ body::before {
   position: absolute;
   top: 0;
   left: 0;
-  mask-image: var(--topography);
-  mask-size: auto;
-  mask-repeat: repeat;
+  -webkit-mask-image: var(--topography);
+          mask-image: var(--topography);
+  -webkit-mask-size: auto;
+          mask-size: auto;
+  -webkit-mask-repeat: repeat;
+          mask-repeat: repeat;
   background-color: var(--text);
   opacity: 0.08;
   z-index: -1;
@@ -179,7 +186,8 @@ body::before {
 
 #top-bar :is(.top-bar, .mobile-top-bar) > ul > li a:is(:hover, :active, :focus) {
   background-image: linear-gradient(135deg, var(--highlight-warm), var(--highlight-cool));
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
   color: transparent;
 }
 
@@ -245,7 +253,8 @@ body::before {
 
 #header h1 a:hover::after {
   background-image: linear-gradient(135deg, var(--highlight-warm), var(--highlight-cool));
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
   color: transparent;
   transition: 0.05s ease-in 0.05s;
 }
@@ -299,10 +308,14 @@ body {
 #header .printuser a, #header .login-status-sign-in {
   height: 60%;
   width: 60%;
-  mask-image: var(--user-icon);
-  mask-size: contain;
-  mask-position: center;
-  mask-repeat: no-repeat;
+  -webkit-mask-image: var(--user-icon);
+          mask-image: var(--user-icon);
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
   background-color: var(--text);
   display: block;
   align-self: center;
@@ -338,10 +351,14 @@ body {
   font-size: 0;
   height: 60%;
   width: 60%;
-  mask-image: var(--search-icon);
-  mask-size: contain;
-  mask-position: center;
-  mask-repeat: no-repeat;
+  -webkit-mask-image: var(--search-icon);
+          mask-image: var(--search-icon);
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
   background-color: var(--text);
   margin: 0;
 }
@@ -388,8 +405,10 @@ div.theme-tab .focus a:is(:hover, :active, :focus), div.theme-tab:is(:focus-with
   letter-spacing: 3vw;
   font-weight: 100;
   background-image: var(--radial-gradient);
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
   color: transparent;
+  width: -moz-max-content;
   width: max-content;
   margin: 0 auto;
 }
@@ -424,15 +443,20 @@ div.theme a.collapsible-block-link {
   font-size: 0;
   height: 60%;
   width: 60%;
-  mask-image: var(--sun-icon);
-  mask-size: contain;
-  mask-position: center;
-  mask-repeat: no-repeat;
+  -webkit-mask-image: var(--sun-icon);
+          mask-image: var(--sun-icon);
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
   background-color: var(--text);
 }
 
 div.theme .collapsible-block-unfolded a.collapsible-block-link {
-  mask-image: var(--moon-icon);
+  -webkit-mask-image: var(--moon-icon);
+          mask-image: var(--moon-icon);
 }
 
 :root:has(.theme .collapsible-block-folded[style="display: none;"]) {
@@ -479,7 +503,8 @@ div.theme .collapsible-block-unfolded a.collapsible-block-link {
   position: fixed;
   background-color: var(--bg-dark);
   border: solid 4px;
-  border-image: linear-gradient(to right, var(--highlight-warm), var(--highlight-cool));
+  -o-border-image: linear-gradient(to right, var(--highlight-warm), var(--highlight-cool));
+     border-image: linear-gradient(to right, var(--highlight-warm), var(--highlight-cool));
   border-image-slice: 1;
 }
 
@@ -578,7 +603,8 @@ div.theme-tab .focus a {
   top: 0;
   left: 0;
   background-image: inherit;
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
   filter: blur(1vw);
   animation: 1.6s ease-in-out 4.4s 1 normal running unfurl-center;
   animation-fill-mode: backwards;
@@ -609,12 +635,16 @@ div.theme-tab .focus a {
 @keyframes fade-in {
   from {
     opacity: 0;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
     pointer-events: none;
   }
   to {
     opacity: 1;
-    user-select: all;
+    -webkit-user-select: all;
+       -moz-user-select: all;
+            user-select: all;
     pointer-events: all;
   }
 }
@@ -643,7 +673,9 @@ div.theme-tab .focus a {
   margin-bottom: 3rem;
   font-family: var(--font-header);
   margin: 0 auto 3rem auto;
+  height: -moz-max-content;
   height: max-content;
+  width: -moz-max-content;
   width: max-content;
 }
 
@@ -715,12 +747,14 @@ div.page-rate-widget-box .rate-points::first-letter {
 }
 #footer .options a:hover {
   background-image: linear-gradient(135deg, var(--highlight-warm), var(--highlight-cool));
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
   color: transparent;
 }
 #footer > a {
   background-image: linear-gradient(135deg, var(--highlight-warm), var(--highlight-cool));
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
   color: transparent;
   text-decoration: underline;
 }
@@ -733,7 +767,8 @@ div.page-rate-widget-box .rate-points::first-letter {
 }
 #license-area a {
   background-image: linear-gradient(135deg, var(--highlight-warm), var(--highlight-cool));
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
   color: transparent;
 }
 #license-area a::after {
@@ -873,7 +908,8 @@ div.page-rate-widget-box .rate-points::first-letter {
 
 .theme-tab .yui-navset .yui-nav .selected {
   background-image: linear-gradient(135deg, var(--highlight-warm), var(--highlight-cool));
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
 }
 
 .theme-tab .yui-navset .yui-nav .selected a {
@@ -930,9 +966,12 @@ div.page-rate-widget-box .rate-points::first-letter {
   display: inline-block;
   height: 1lh;
   width: 1lh;
-  mask-image: var(--mode-mask);
-  mask-size: contain;
-  mask-position: center;
+  -webkit-mask-image: var(--mode-mask);
+          mask-image: var(--mode-mask);
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
   background-color: var(--text);
   vertical-align: top;
   margin-right: 0.2rem;
@@ -955,6 +994,7 @@ div.page-rate-widget-box .rate-points::first-letter {
 }
 
 .yui-navset-top {
+  width: -moz-max-content;
   width: max-content;
 }
 
@@ -1030,10 +1070,14 @@ div.page-rate-widget-box .rate-points::first-letter {
   font-size: 0;
   height: 60%;
   width: 60%;
-  mask-image: var(--theme-icon);
-  mask-size: contain;
-  mask-position: center;
-  mask-repeat: no-repeat;
+  -webkit-mask-image: var(--theme-icon);
+          mask-image: var(--theme-icon);
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
   background-color: var(--text);
 }
 
