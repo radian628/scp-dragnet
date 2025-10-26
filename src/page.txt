@@ -11,11 +11,9 @@
 [[/collapsible]]
 [[/div]]
 
-[[=]]
 [[module rate]]
-[[/=]]
 
-[[div class="pre-content"]]
+
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce gravida convallis eros ut faucibus. Maecenas sit amet velit auctor, fermentum lacus non, tincidunt quam. Aenean cursus mi ligula, quis viverra turpis vulputate nec. Cras vel pharetra diam, ut scelerisque ante. Vestibulum id mauris ac metus fermentum viverra. In hac habitasse platea dictumst. Vivamus varius nunc nec metus varius vulputate. Aliquam tincidunt lobortis pretium.
 
@@ -46,4 +44,3 @@ Suspendisse et nibh ac felis tincidunt euismod. Pellentesque interdum felis ligu
 Mauris in fermentum tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent congue arcu lacus, ac posuere mauris ultricies quis. Etiam bibendum quam facilisis, molestie erat nec, fermentum metus. Phasellus sollicitudin leo eget nisi venenatis finibus. Suspendisse lacus enim, venenatis ut purus sit amet, efficitur fringilla nisi. Nunc venenatis sapien non tempor aliquam. Sed sed tempor quam. Duis fringilla sem sit amet ultricies tincidunt. Sed sodales lectus lorem, vitae commodo augue placerat et. Donec pretium accumsan lectus nec sollicitudin. Cras tincidunt ut erat feugiat auctor. Cras sem dui, maximus id efficitur vitae, pharetra sit amet mauris.
 
 Sed ultrices feugiat hendrerit. Maecenas eu magna in dolor consectetur egestas. Cras lorem turpis, elementum eu varius sit amet, vestibulum nec mi. Integer leo sem, dignissim at nibh non, pulvinar consequat sem. Duis malesuada eu leo a euismod. Suspendisse et mollis erat. Integer congue tincidunt ipsum, at auctor lectus fermentum vitae. Nunc egestas, dolor et mollis rhoncus, eros ante imperdiet sem, at ultricies quam quam non orci. Aliquam maximus ex eu lacus volutpat, non elementum augue vulputate. Quisque tristique condimentum ligula vitae gravida. In et interdum tortor, accumsan sodales mi. Sed ultrices vehicula magna, ut viverra massa mollis vel. Curabitur auctor fringilla hendrerit. Quisque rhoncus dolor mi, ac efficitur mi facilisis et. Aliquam egestas egestas dolor, vitae egestas ex luctus vitae. Fusce fringilla elit in dapibus euismod. 
-[[/div]]
