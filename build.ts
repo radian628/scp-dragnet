@@ -7,6 +7,7 @@ import { exec } from "node:child_process";
 import { stdout, stderr } from "node:process";
 import postcss from "postcss";
 import autoprefixer from "autoprefixer";
+import cssnanoPlugin from "cssnano";
 
 const devopsServer = exec("wds run");
 
@@ -58,7 +59,9 @@ globalThis.sass = async (str, enclosingTag) => {
     async (s) => {
       const rawCss = (await sassCompiler.compileStringAsync(s)).css;
       return (
-        await postcss([autoprefixer]).process(rawCss, { from: undefined })
+        await postcss([autoprefixer, cssnanoPlugin]).process(rawCss, {
+          from: undefined,
+        })
       ).css;
     },
     str,
