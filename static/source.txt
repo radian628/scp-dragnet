@@ -370,7 +370,7 @@ body {
   cursor: pointer;
 }
 
-div.theme-tab .focus a:is(:hover, :active, :focus), div.theme-tab:is(:focus-within, :hover) .focus a {
+div.theme-tab .focus a:is(:hover, :active, :focus), div.theme-tab:is(:focus-within) .focus a, div.theme-tab .focus a:is(:focus, :hover) {
   background-color: var(--contrast);
   background-image: linear-gradient(135deg, var(--highlight-warm), var(--highlight-cool) 70%);
   transition: 0.05s ease-in 0.05s;
@@ -770,6 +770,7 @@ div.page-rate-widget-box .rate-points::first-letter {
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
+  display: inline-block;
 }
 #license-area a::after {
   content: ".";
@@ -841,12 +842,13 @@ div.page-rate-widget-box .rate-points::first-letter {
 
 :is(#page-options-bottom, #page-options-bottom-2) {
   display: flex;
-  width: 100%;
-  width: 80%;
+  width: -moz-max-content;
+  width: max-content;
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
   margin: 0;
+  max-width: 450px;
 }
 :is(#page-options-bottom, #page-options-bottom-2) a {
   font-family: var(--font-header);
@@ -856,11 +858,12 @@ div.page-rate-widget-box .rate-points::first-letter {
   padding: 0.2rem 0.5rem;
   margin: 3px;
   background-clip: padding-box;
-  flex-grow: 1;
+  flex-basis: 5rem;
   text-align: center;
   align-content: center;
   position: relative;
   display: block;
+  flex-grow: 1;
 }
 :is(#page-options-bottom, #page-options-bottom-2) a::before {
   content: "";
@@ -882,12 +885,20 @@ div.page-rate-widget-box .rate-points::first-letter {
   display: flex !important;
 }
 
-#rename-move-button, #delete-button {
-  flex-basis: 40%;
+#page-options-bottom-2 :is(#rename-move-button, #delete-button) {
+  flex-basis: 45%;
 }
 
-#more-options-button {
+#page-options-bottom-2 :is(#watchers-button, #edit-meta-button, #edit-append-button, #edit-sections-button) {
+  flex-basis: 20%;
+}
+
+#page-options-bottom #more-options-button {
   flex-basis: 100%;
+}
+
+#page-options-bottom :is(#print-button, #site-tools-button) {
+  flex-basis: 45%;
 }
 
 .theme-tab .yui-content {
@@ -906,7 +917,7 @@ div.page-rate-widget-box .rate-points::first-letter {
   display: flex;
 }
 
-.theme-tab .yui-navset .yui-nav .selected {
+.theme-tab .yui-navset .yui-nav .selected a em {
   background-image: linear-gradient(135deg, var(--highlight-warm), var(--highlight-cool));
   -webkit-background-clip: text;
           background-clip: text;
@@ -918,11 +929,13 @@ div.page-rate-widget-box .rate-points::first-letter {
 
 .theme-tab .yui-navset .yui-nav a {
   color: var(--text);
+  font-weight: 500;
 }
 
 .theme-tab .yui-navset .yui-nav li {
   flex-basis: 100%;
   margin: 0;
+  font-family: var(--font-header);
 }
 
 .yui-navset .yui-nav .selected a em {
