@@ -1,5 +1,10 @@
 [!--devops:http://localhost:6969/static/manifest.json--]
 
+[[include :scp-wiki:component:interwiki-style
+| priority=1
+| theme=https://scp-sandbox-3.wikidot.com/local--files/dragnet/interwiki.css
+]]
+
 [[module css]]
 {{js:sass("theme.css")}}
 [[/module]]
