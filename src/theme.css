@@ -1206,6 +1206,7 @@ div.page-rate-widget-box .rate-points::first-letter {
   height: 100%;
   z-index: -1;
   transition: 0.07s ease-in 0.03s;
+  border-radius: 0.5rem;
 }
 
 #side-bar .menu-item a:hover {
