@@ -285,13 +285,6 @@ body::before {
   grid-area: login;
 }
 
-/* temp */
-
-#side-bar {
-  display: none;
-}
-
-/* /temp */
 
 body {
   min-height: 100vh;
@@ -1093,5 +1086,145 @@ div.page-rate-widget-box .rate-points::first-letter {
   .theme-tab:hover .dropdown {
     visibility: visible;
   }
+}
+
+#side-bar {
+  --top: calc(3rem + 4px);
+  transition: 0.3s ease-in 0.05s;
+  position: fixed;
+  top: var(--top);
+  height: calc(100vh - var(--top));
+  overflow-y: scroll;
+  direction: rtl;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-dark);
+  border-right: solid 2px var(--bg-light);
+  border-left: solid 2px var(--bg-light);
+  font-family: var(--font-header);
+  z-index: 4;
+  width: 300px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#side-bar:target {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#side-bar > *:not(.close-menu) {
+  direction: ltr;
+  clip-path: inset(0 100% 0 0);
+  transition: 0.3s ease-in 0.05s;
+}
+
+#side-bar .side-block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 0;
+  width: 100%;
+}
+
+#side-bar .side-block a {
+  font-size: 1rem;
+}
+
+#side-bar .side-block .heading {
+  font-size: 1.2rem;
+  flex-basis: 100%;
+}
+
+#side-bar .menu-item {
+  flex-grow: 1;
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#side-bar .menu-item a {
+  flex-grow: 1;
+  display: block;
+  flex-basis: 45%;
+  text-align: center;
+  padding: 0.3rem 0;
+}
+
+#side-bar .menu-item a[href*="scp-series"] {
+  flex-basis: 0;
+  text-align: center;
+}
+
+#side-bar:target > * {
+  clip-path: inset(0);
+}
+
+#side-bar .menu-item a {
+  color: var(--text);
+  background-color: var(--bg-dark);
+  position: relative;
+}
+
+#side-bar .menu-item a:not([href*="scp-series"]):nth-child(even) {
+  border-left: solid 1px var(--bg-light)
+}
+
+#side-bar .heading {
+  padding: 0.2rem 0;
+  border-bottom: solid 1px var(--bg-light);
+}
+
+#side-bar .menu-item a[href*="scp-series"] {
+  flex-basis: 0;
+}
+
+#side-bar .menu-item {
+  border-bottom: solid 1px var(--bg-light)
+}
+
+#side-bar .menu-item a[href*="scp-series"] + a {
+  border-left: solid 1px var(--bg-light);
+}
+
+#side-bar .menu-item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#side-bar .menu-item a::after {
+  content: "";
+  background-image: linear-gradient(135deg, var(--highlight-warm), var(--highlight-cool));
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  z-index: -1;
+  transition: 0.07s ease-in 0.03s;
+}
+
+#side-bar .menu-item a:hover {
+  background-color: transparent;
+  color: var(--contrast);
+  transition: 0.07s ease-in;
+}
+
+#side-bar .menu-item a:hover::after {
+  width: 100%;
+}
+a.close-menu {
+  background-color: transparent;
+}
+
+#side-bar .side-block.media div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  width: 100%;
 }
 
